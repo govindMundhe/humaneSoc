@@ -1,0 +1,40 @@
+.pet-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .pet-details-card {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pet-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .pet-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .mat-card-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .adopted-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+  }
+  

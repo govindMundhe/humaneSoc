@@ -1,0 +1,20 @@
+.grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pet-card {
+  padding: 10px;
+  text-align: center;
+  width: 350px;
+  flex: 1 1 calc(33.33% - 80px);
+  max-width: calc(33.33% - 80px);
+}
+
+mat-paginator {
+  display: flex;
+  justify-content: center;
+} 

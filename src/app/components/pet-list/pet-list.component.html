@@ -1,0 +1,49 @@
+<div class="filter-container p-5 d-flex align-items-baseline">
+  <div class="px-3">
+    <mat-form-field appearance="outline" class="full-width" [style.width.px]=327>
+      <mat-label>Search by name or breed</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput type="text" [(ngModel)]="searchText" (input)="applyFilters()">
+    </mat-form-field>
+  </div>
+  <div class="px-3">
+    <mat-radio-group [(ngModel)]="genderFilter" (change)="applyFilters()" class="radio-group">
+      <mat-label>Gender</mat-label>
+      <mat-radio-button value="All">All</mat-radio-button>
+      <mat-radio-button value="Male">Male</mat-radio-button>
+      <mat-radio-button value="Female">Female</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="px-3">
+    <mat-radio-group [(ngModel)]="typeFilter" (change)="applyFilters()" class="radio-group">
+      <mat-label>Animal Type</mat-label>
+      <mat-radio-button value="All">All</mat-radio-button>
+      <mat-radio-button value="Dog">Dog</mat-radio-button>
+      <mat-radio-button value="Cat">Cat</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+  
+  <div class="grid">
+    <div *ngFor="let pet of dataSource.data.slice(paginator.pageIndex * pageSize, (paginator.pageIndex + 1) * pageSize)" class="pet-card">
+      <mat-card class="example-card" appearance="outlined">
+        <mat-card-header class="m-auto p-2">
+          <mat-card-title>{{ pet.name }}</mat-card-title>
+          <mat-card-subtitle>{{ pet.breed }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="pet.image" alt="{{pet.name}}">
+        <mat-card-actions class="text-center p-2">
+          <button mat-raised-button routerLink="/details/{{pet.id}}" class="m-auto">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <mat-paginator #paginator
+               class="demo-paginator"
+               [pageSize]="pageSize"
+               [disabled]="disabled"
+               [showFirstLastButtons]="showFirstLastButtons"
+               [pageIndex]="pageIndex"
+               aria-label="Select page">
+</mat-paginator>
+  

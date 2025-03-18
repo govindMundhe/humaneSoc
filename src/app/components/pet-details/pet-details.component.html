@@ -1,0 +1,24 @@
+<div class="pet-details-container" *ngIf="pet">
+  <mat-card class="pet-details-card">
+    <mat-card-header>
+      <mat-card-title>{{ pet.name }}</mat-card-title>
+      <mat-card-subtitle>{{ pet.breed }} - {{ pet.gender }}, {{ pet.age }} years old</mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]="pet.image" alt="{{ pet.name }}" width="500" class="pet-image">
+
+    <mat-card-content>
+      <p class="pet-description">{{ pet.description }}</p>
+      <p><strong>Medical Notes:</strong> {{ pet.medicalNotes }}</p>
+      <p><strong>Type:</strong> {{ pet.type }}</p>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="accent" class="back-button" class="mx-2" [routerLink]="['/']">
+        < Back
+      </button>
+      <button mat-raised-button color="primary" *ngIf="!pet.adopted" (click)="adoptPet()">Adopt Me!</button>
+      <span class="adopted-text" *ngIf="pet.adopted">Already Adopted</span>
+    </mat-card-actions>
+  </mat-card>
+</div>
