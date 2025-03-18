@@ -3,8 +3,8 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PetService } from '../../services/pet.service';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';import { NotificationService } from '../../services/notification.service';
+``
 
 @Component({
   selector: 'app-pet-details',
@@ -15,9 +15,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class PetDetailsComponent implements OnInit {
   pet: any;
-  private _snackBar = inject(MatSnackBar);
 
-  constructor(private route: ActivatedRoute, private petService: PetService, private router: Router) {}
+  constructor(private route: ActivatedRoute, private petService: PetService, private notification: NotificationService) {}
 
   ngOnInit() {
     const petId = Number(this.route.snapshot.paramMap.get('id'));
@@ -29,7 +28,7 @@ export class PetDetailsComponent implements OnInit {
   adoptPet() {
     this.petService.adoptPet(this.pet.id).subscribe(() => {
       this.pet.adopted = true;
-      this._snackBar.open('You have adopted this pet!', 'Dismiss', {duration: 3000})
+      this.notification.showNotification("You've adopted this pet!")
     });
   }
 }

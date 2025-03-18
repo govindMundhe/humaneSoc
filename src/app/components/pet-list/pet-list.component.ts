@@ -35,12 +35,7 @@ export class PetListComponent implements OnInit {
   genderFilter = 'All';
   typeFilter = 'All';
   pageSize = 10;
-  pageIndex = 0;
-  pageSizeOptions = [5, 10, 25];
-
-  hidePageSize = false;
-  showPageSizeOptions = true;
-  showFirstLastButtons = true;
+  
   disabled = false;
   dataSource = new MatTableDataSource<any>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -66,8 +61,6 @@ export class PetListComponent implements OnInit {
         (this.typeFilter === 'All' || pet.type === this.typeFilter)
       );
     });
-
-    this.pageIndex = 0;
     this.updateDataSource();
   }
 

@@ -22,7 +22,7 @@
       "description": "Shy but sweet",
       "medicalNotes": "Vaccinated",
       "image": "https://placecats.com/neo_banana/500/300",
-      "adopted": true
+      "adopted": false
     },
     {
       "id": "3",
@@ -106,7 +106,7 @@
       "description": "Calm and affectionate",
       "medicalNotes": "No known issues",
       "image": "https://placedog.net/503/300",
-      "adopted": true
+      "adopted": false
     },
     {
       "id": "10",
@@ -214,7 +214,7 @@
       "description": "Energetic and loving",
       "medicalNotes": "No known issues",
       "image": "https://placecats.com/neo/500/300",
-      "adopted": true
+      "adopted": false
     },
     {
       "id": "20",
