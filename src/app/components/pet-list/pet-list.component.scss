@@ -6,6 +6,12 @@
   flex-wrap: wrap;
 }
 
+@media (max-width:1000px) {
+  .pet-card {
+    flex: 1 1 calc(50.33% - 80px) !important;
+    max-width: calc(50.33% - 80px) !important;
+  }
+}
 .pet-card {
   padding: 10px;
   text-align: center;
