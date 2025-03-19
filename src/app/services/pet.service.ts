@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PetService {
-  private apiUrl = 'http://localhost:3000/pets';
+  private apiUrl = 'https://67daf6521fd9e43fe4730832.mockapi.io/pets';
 
   constructor(private http: HttpClient) {}
 
@@ -19,6 +19,6 @@ export class PetService {
   }
 
   adoptPet(id: number): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/${id}`, { adopted: true });
+    return this.http.put(`${this.apiUrl}/${id}`, { adopted: true })
   }
 }
